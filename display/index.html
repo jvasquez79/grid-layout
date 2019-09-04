@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subgrid y Display</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        em {
+            background-color: lightgray;
+        }
+        .container {
+            display: grid;
+           /*  grid-template-columns: 25% 200px 25%;
+            grid-template-rows: 300px 300px; */
+            /* grid-template: filas / columnas; */
+            grid-template: 300px 100px 100px / 50% 200px 100px;
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        .item:nth-of-type(4) {
+            background-color: blue;
+            overflow: auto;
+            /*display: subgrid; no está implementado aún */
+            display: grid;
+            grid-template: 50px 50px 50px / 200px 200px 200px;
+        }
+        .item .item {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">
+            <div class="item">subitem #1</div>
+            <div class="item">subitem #2</div>
+            <div class="item">subitem #3</div>
+            <div class="item">subitem #4</div>
+            <div class="item">subitem #5</div>
+        </div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+    </section>
+    <section class="notas">
+        <h1>Grids indendatos y tipos de display</h1>
+        <p><em>:nth-of-type</em> es un pseudo-selector usado para ubicar un item específico dentro de una lista de items que cumplan con la condición del selector.</p>
+        <p>El display <em>subgrid</em> no está implementado, por lo que al grid hijo se le debe colocar <em>display: grid</em> y definir su template.</p>
+        <p><em>inline-grid</em> tampoco está implementado.</p>
+    </section>
+</body>
+</html>

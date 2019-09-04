@@ -1,0 +1,21 @@
+Conceptos
+Grid Container
+Elemento padre con display: grid
+
+Grid Item
+Elementos hijos directos de un Grid Container
+
+Grid Line
+Líneas divisoras horizontales y verticales incluyendo contornos del grid
+
+Grid Track
+Espacio entre líneas adyacentes
+
+Grid Cell
+Espacio entre dos filas adyacentes y dos columnas adyacentes
+
+Grid Area
+Espacio rodeado por cuatro grid lines
+
+
+

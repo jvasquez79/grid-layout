@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamaño de items en filas</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        em {
+            background-color: lightgray;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            grid-gap: 5px;
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        .item:nth-of-type(1) {
+            grid-column: 1 / span 3;
+            grid-row: 1 / span 2;
+        }
+        .item:nth-of-type(2) {
+            grid-column: 4 / span 2;
+            grid-row: 1 / span 2;
+        }
+        .item:nth-of-type(3) {
+            grid-column: 6 / span 2;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+    </section>
+    <section class="notas">
+        <h1>Definir tamaño de filas</h1>
+        <p>Se utiliza la propiedad <em>grid-row</em>de forma similar a <em>grid-column</em>, indicando el inicio y fin de un área en función de las líneas horizontales del grid.</p>
+    </section>
+</body>
+</html>

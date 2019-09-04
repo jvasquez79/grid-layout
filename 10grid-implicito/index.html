@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grids Implícitos</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        em {
+            background-color: lightgray;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: [inicio] 1fr [l2] 1fr [l3] 1fr [destacado1-end] 1fr [l5] 1fr [destacado2-end] 1fr [l7] 1fr [final];
+            grid-template-rows: [inicio] 200px [f2] 200px [final];
+            grid-gap: 5px;
+            height: 100vh;
+            /* grid-auto-flow: column; */
+            /* grid-auto-columns: 50px 100px; */
+            grid-auto-rows: 50px 100px;
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        .item:nth-of-type(1) {
+            grid-column: inicio / destacado1-end;
+            grid-row: inicio / final; 
+        }
+        .item:nth-of-type(2) {
+            grid-column: destacado1-end / destacado2-end;
+            grid-row: inicio / final; 
+        }
+        .item:nth-of-type(3) {
+            grid-column: destacado2-end / final;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+        <div class="item">item #5</div>
+    </section>
+    <section class="notas">
+        <h1>Grids Implícitos</h1>
+        <p>Se utilizan las propiedades <em>grid-auto-rows</em> y <em>grid-auto-columns</em>para asignar dimensiones a filas y columnas que no entran en las especificaciones de <em>grid-template</em>, o cuando esta propiedad no es utilizada.</p>
+    </section>
+</body>
+</html>

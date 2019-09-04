@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Site with CSS Grid Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', Arial, sans-serif;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            grid-template-rows: 60px auto;
+            grid-gap: 0px;/* 
+            width: 80vw;
+            margin: 0 auto; */
+            min-height: 100vh;
+        }
+
+        .header {
+            grid-column-end: span 2;
+            padding: 20px;
+        }
+
+        .header .search input {
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            padding: 5px;
+            max-width: 350px;
+            width: 350px;
+            height: 20px;
+        }
+
+        .menu {
+            background: #FF5B62;
+            max-width: 90px;
+            padding: 5px;
+            text-align: center;
+            position: relative;
+            bottom: 0px;
+            grid-row-end: -1;/* 
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+            min-height: 100%;
+            flex-grow: 1; */
+            min-height: initial;
+        }
+
+        .menu a {
+            color: white;
+            height: 100%;
+            display: block;
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .menu a.settings {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .movie-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 200px);
+            grid-template-rows:initial;
+            justify-content: space-evenly;
+            grid-row-gap: 10px;
+            grid-column-gap: 25px;
+            align-items: initial;
+            vertical-align: top;
+            height: fit-content;
+            padding: 12px;
+        }
+
+        .movie-category {
+            grid-column: 1 / -1;
+            text-align: left;
+            height: 20px;
+        }
+
+        .movie {
+            position: relative;
+            display: block;
+        }
+
+        .movie-image {
+            margin: 0;
+        }
+
+        .movie-image img {
+            width: 100%;
+            vertical-align: top;
+        }
+        
+        .movie-overlay {
+            background: rgba(255, 91, 98, .7);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            padding: 5px;
+        }
+
+        .movie-overlay h3 {
+            font-size: 1m;
+        }
+
+        .movie-overlay p {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <picture class="logo">
+                <img src="" alt="logo">
+            </picture>
+            <span class="search">
+                <input type="text" name="" id="" placeholder="Search your favorite movie, actor or director">
+            </span>
+            <span class="profile">
+                <picture class="profile-picture">
+
+                </picture>
+            </span>
+        </header>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Más likes</a>
+            <a href="#" class="settings">Ajustes</a>
+        </nav>
+        <div class="movie-list">
+            <h2 class="movie-category">Ahora en el cine</h2>
+            <div class="movie">                
+                <figure class="movie-image">
+                    <img src="https://picsum.photos/id/1008/200" alt="">
+                </figure>
+                <span class="movie-overlay">
+                    <h3>The Secret Life of Pets</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu risus nec...</p>
+                </span>
+                <span class="movie-link-overlay"></span>
+            </div>
+            <div class="movie">                
+                <figure class="movie-image">
+                    <img src="https://picsum.photos/id/10/200" alt="">
+                </figure>
+                <span class="movie-overlay">
+                    <h3>The Secret Life of Pets</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu risus nec...</p>
+                </span>
+                <span class="movie-link-overlay"></span>
+            </div>
+            <div class="movie">                
+                <figure class="movie-image">
+                    <img src="https://picsum.photos/id/1003/200" alt="">
+                </figure>
+                <span class="movie-overlay">
+                    <h3>The Secret Life of Pets</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu risus nec...</p>
+                </span>
+                <span class="movie-link-overlay"></span>
+            </div>
+            <div class="movie">                
+                <figure class="movie-image">
+                    <img src="https://picsum.photos/id/1024/200" alt="">
+                </figure>
+                <span class="movie-overlay">
+                    <h3>The Secret Life of Pets</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu risus nec...</p>
+                </span>
+                <span class="movie-link-overlay"></span>
+            </div>
+        </div>
+    </div>
+    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu risus nec est ultricies mattis vitae vitae neque. Maecenas luctus, justo id ultricies varius, ex turpis finibus dolor, sed feugiat magna mi ut elit. Nullam feugiat gravida leo sit amet posuere. Fusce blandit cursus nisl eu malesuada. Proin semper, urna at feugiat semper, lectus lectus suscipit ligula, eget feugiat tortor orci vulputate sem. Fusce volutpat turpis vel tortor eleifend vehicula. Aenean finibus magna vel cursus lacinia. Aliquam iaculis convallis nunc et lacinia. -->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funciones</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        em {
+            background-color: lightgray;
+        }
+        .container {
+            display: grid;
+           /*  grid-template-columns: 25% 200px 25%;
+            grid-template-rows: 300px 300px; */
+            /* grid-template: filas / columnas; */
+            grid-template: 300px 100px 100px / repeat(4, minmax(200px, 1fr));
+/*             margin-right: 10px;
+            margin-bottom: 10px; */
+            /* grid-column-gap: 30px;
+            grid-row-gap: 50px; */
+            /* grid-gap: filas columnas; */
+            grid-gap: 10px;
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+        .item:nth-of-type(4) {
+            background-color: blue;
+            overflow: auto;
+            /*display: subgrid; no está implementado aún */
+            display: grid;
+            grid-template: 50px 50px 50px / 200px 200px 200px;
+        }
+        .item .item {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">
+            <div class="item">subitem #1</div>
+            <div class="item">subitem #2</div>
+            <div class="item">subitem #3</div>
+            <div class="item">subitem #4</div>
+            <div class="item">subitem #5</div>
+        </div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+    </section>
+    <section class="notas">
+        <h1>Funciones</h1>
+        <p>Se implementa un nuevo tipo de unidad, <em>fr</em>, con la cual se expresa una porción del espacio disponible. Por ejemplo, al indicar <em>1fr 1fr 1fr</em> se declaran tres columnas, cada una con una tercera parte del espacio disponible, sin importar el contenido de cada una.</p>
+        <p>Con la función <em>repeat()</em> se repiten valores sin tener que escribirlos varias veces. Por ejemplo, <em>repeat(4, 1fr)</em> indica cuatro columnas, cada una con un ancho de <em>1fr</em>. Por otra parte, si en lugar de un número se coloca la palabra reservada <em>auto-fill</em>, la cantidad de columnas o filas dependerá del ancho o alto disponible, logrando un effecto responsive. </p>
+        <p>Con la función <em>minmax</em> se establecen valores mínimos y máximos. Por ejemplo, <em>min(200px, 1fr)</em> indica que un objeto tendría por lo menos 200px pero un máximo de 1fr.</p>
+    </section>
+</body>
+</html>
